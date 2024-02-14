@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oblig 1</title>
+    <script src="Oblig1Java.js"></script>
+</head>
+<body>
+
+<h1>Bestilling av kinobiletter</h1>
+<table>
+    <tr><td>Velg film:</td><td><select id="Film">
+        <option>Velg film</option>
+        <option> Harry Potter 1</option>
+        <option> Harry Potter 2</option>
+        <option> Harry Potter 3</option>
+        <option> Harry Potter 4</option>
+        <option> Harry Potter 5 </option>
+
+    </select><span id="Filmcheck"  style="color: red"></span>
+    <tr></tr>
+    <tr><td>Antall</td><td><input type="text" id="Antall"  min="1" style="width: 20px"></td><td><span id="Antallcheck"  style="color: red"></span></td></tr>
+
+    <tr><td>Fornavn</td><td><input type="text" id="Fornavn"></td><td><span id="Fornavncheck"  style="color: red"></span></td></tr>
+
+    <tr><td>Etternavn</td><td><input type="text" id="Etternavn"></td><td><span id="Etternavncheck"  style="color: red"></span></td></tr>
+
+    <tr><td>Telefonnr</td><td><input type="tel" id="Telefonnr" pattern="[0-9]{8}"></td><td><span id="Tlfcheck"  style="color: red"></span></td></tr>
+
+    <tr><td>Epost</td><td><input type="text" id="Epost"></td><td><span id="Epostcheck"  style="color: red"></span></td></tr>
+
+    <tr><td><button onclick="registrer()">Kjøp billett</button></td></tr>
+
+</table>
+<h2>Alle biletter</h2>
+
+<div id="billetListe"></div>
+<br><button onclick="slett()">Slett alle bilettene</button>
+
+</body>
+</html>
+
+
