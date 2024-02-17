@@ -1,43 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
-    <title>Oblig 1</title>
+    <title>Kinobillettbestilling</title>
     <script src="Oblig1Java.js"></script>
 </head>
 <body>
 
-<h1>Bestilling av kinobiletter</h1>
-<table>
-    <tr><td>Velg film:</td><td><select id="Film">
-        <option>Velg film</option>
-        <option> Harry Potter 1</option>
-        <option> Harry Potter 2</option>
-        <option> Harry Potter 3</option>
-        <option> Harry Potter 4</option>
-        <option> Harry Potter 5 </option>
+<section class="bestillings-skjema">
+    <h1>Kinobillettbestilling</h1>
+    <form id="billet-skjema">
+        <label for="film">Velg Film:</label><br>
+        <select id="film">
+            <option value="">Velg en film</option>
+            <option value="1">Harry Potter 1</option>
+            <option value="2">Harry Potter 2</option>
+            <option value="3">Harry Potter 3</option>
+            <option value="4">Harry Potter 4</option>
+            <option value="5">Harry Potter 5</option>
+        </select>
+        <span id="filmcheck" style="color: red"></span><br>
+        <label for="antall">Antall:</label><br>
+        <input type="number" id="antall" min="1">
+        <span id="antallcheck" style="color: red"></span><br>
+        <label for="fornavn">Fornavn:</label><br>
+        <input type="text" id="fornavn">
+        <span id="fornavncheck" style="color: red"></span><br>
+        <label for="etternavn">Etternavn:</label><br>
+        <input type="text" id="etternavn">
+        <span id="etternavncheck" style="color: red"></span><br>
+        <label for="telefonnummer">Telefonnummer:</label><br>
+        <input type="text" id="telefonnummer" pattern="[0-9]{8}">
+        <span id="telefonnummercheck" style="color: red"></span><br>
+        <label for="epost">E-post:</label><br>
+        <input type="email" id="epost">
+        <span id="epostcheck" style="color: red"></span><br>
+        <button type="button" onclick="registrerBillett()">Kjøp Billett</button>
+    </form>
+</section>
 
-    </select><span id="Filmcheck"  style="color: red"></span>
-    <tr></tr>
-    <tr><td>Antall</td><td><input type="text" id="Antall"  min="1" style="width: 20px"></td><td><span id="Antallcheck"  style="color: red"></span></td></tr>
-
-    <tr><td>Fornavn</td><td><input type="text" id="Fornavn"></td><td><span id="Fornavncheck"  style="color: red"></span></td></tr>
-
-    <tr><td>Etternavn</td><td><input type="text" id="Etternavn"></td><td><span id="Etternavncheck"  style="color: red"></span></td></tr>
-
-    <tr><td>Telefonnr</td><td><input type="tel" id="Telefonnr" pattern="[0-9]{8}"></td><td><span id="Tlfcheck"  style="color: red"></span></td></tr>
-
-    <tr><td>Epost</td><td><input type="text" id="Epost"></td><td><span id="Epostcheck"  style="color: red"></span></td></tr>
-
-    <tr><td><button onclick="registrer()">Kjøp billett</button></td></tr>
-
-</table>
-<h2>Alle biletter</h2>
-
-<div id="billetListe"></div>
-<br><button onclick="slett()">Slett alle bilettene</button>
-
-</body>
-</html>
+<section class="billet-liste">
+    <h2>Alle Billetter</h2>
+    <div id="billet-liste-container"></div>
+    <button type="button" onclick="slettAlleBilletter()">Slett Alle Billetter</button>
+</section>
 
 
